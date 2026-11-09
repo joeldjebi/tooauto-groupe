@@ -1,0 +1,202 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source not '../views/welcome.blade.php';
+
+/*
+ | Direction "Route & Signalisation": flat colours only (no gradients, no glows),
+ | Barlow (drawn from highway signage) for text, Barlow Condensed for display.
+ */
+@theme {
+    --font-sans: 'Barlow', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Barlow Condensed', 'Barlow', ui-sans-serif, system-ui, sans-serif;
+
+    /* Brand */
+    --color-brand-orange: #f58220;
+    --color-brand-yellow: #ffc20e;
+
+    /* Road palette */
+    --color-asphalt: #111111;
+    --color-road: #1b1b1b;
+    --color-sign: #0a0a0a;
+    --color-pole: #3b3b3b;
+    --color-lane: #ecebe6;
+
+    /* Neutrals */
+    --color-ink-950: #0b0b0b;
+    --color-ink-900: #111111;
+    --color-ink-800: #181818;
+    --color-ink-700: #222222;
+    --color-ink-600: #2e2e2e;
+    --color-paper: #f3f2ee;
+
+    --ease-apple: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility container-site {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-inline: 1.25rem;
+
+    @media (width >= 64rem) {
+        padding-inline: 2rem;
+    }
+}
+
+/* Aligns a full-bleed horizontal track with the site container. */
+@utility track-gutter {
+    padding-inline: 1.25rem;
+
+    @media (width >= 64rem) {
+        padding-inline: max(2rem, calc((100vw - 80rem) / 2 + 2rem));
+    }
+}
+
+/* Painted lane markings: a dashed line, drawn with a hard-stop repeating pattern. */
+@utility lane-dashes-y {
+    background-image: repeating-linear-gradient(to bottom, var(--color-brand-yellow) 0 3.5rem, transparent 3.5rem 6.5rem);
+    background-position: 50% var(--road-y, 0px);
+}
+
+@utility lane-dashes-x {
+    background-image: repeating-linear-gradient(to right, var(--color-lane) 0 4rem, transparent 4rem 7rem);
+    background-position: var(--road-x, 0px) 50%;
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-rendering: optimizeLegibility;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-brand-yellow);
+        outline-offset: 3px;
+    }
+
+    [id] {
+        scroll-margin-top: 5rem;
+    }
+}
+
+/* ------------------------------------------------------------------
+ | Motion
+ | `.js` is set inline in <head> only when the visitor accepts motion,
+ | so content is never hidden without JavaScript or with reduced motion.
+ * ------------------------------------------------------------------ */
+
+.js [data-reveal],
+.js [data-reveal-stagger] > *,
+.js [data-hero-fade] {
+    opacity: 0;
+}
+
+.js [data-split],
+.js [data-wipe-line] > span {
+    visibility: hidden;
+}
+
+.split-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+}
+
+.split-word {
+    display: inline-block;
+    will-change: transform;
+}
+
+/* Headline lines are painted on like a road sign: a yellow block sweeps across, the text stays behind it. */
+[data-wipe-line] {
+    position: relative;
+    width: fit-content;
+}
+
+.wipe-block {
+    position: absolute;
+    inset: 0.06em -0.08em 0.02em;
+    background: var(--color-brand-yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    pointer-events: none;
+}
+
+/* Oncoming traffic in the hero (left lane, driving down). */
+@keyframes oncoming {
+    from {
+        transform: translateY(-30vh);
+    }
+
+    to {
+        transform: translateY(130vh);
+    }
+}
+
+.animate-oncoming {
+    animation: oncoming 3.6s linear infinite;
+}
+
+/* Odometer digits */
+.odo-cell {
+    display: block;
+    height: 1.6rem;
+    width: 1.05rem;
+    overflow: hidden;
+    border-radius: 2px;
+    background: #1d1d1d;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.6rem;
+    text-align: center;
+}
+
+.odo-cell--tenth {
+    background: var(--color-brand-yellow);
+    color: var(--color-ink-950);
+}
+
+.odo-strip {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.45s var(--ease-apple);
+}
+
+.odo-cell--tenth .odo-strip {
+    transition: none;
+}
+
+.odo-strip > span {
+    display: block;
+    height: 1.6rem;
+}
+
+/* Lenis smooth scrolling */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

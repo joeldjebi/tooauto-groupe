@@ -1,0 +1,7 @@
+import { boot } from './motion';
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+} else {
+    boot();
+}

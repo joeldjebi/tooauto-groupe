@@ -1,0 +1,77 @@
+{
+  "_barlow-400-normal-fsAxiSwU.woff": {
+    "file": "assets/barlow-400-normal-fsAxiSwU.woff",
+    "src": "_barlow-400-normal-fsAxiSwU.woff"
+  },
+  "_barlow-400-normal-qiz4-Cze.woff2": {
+    "file": "assets/barlow-400-normal-qiz4-Cze.woff2",
+    "src": "_barlow-400-normal-qiz4-Cze.woff2"
+  },
+  "_barlow-500-normal-BPAOfeC8.woff2": {
+    "file": "assets/barlow-500-normal-BPAOfeC8.woff2",
+    "src": "_barlow-500-normal-BPAOfeC8.woff2"
+  },
+  "_barlow-500-normal-C1h8hMer.woff": {
+    "file": "assets/barlow-500-normal-C1h8hMer.woff",
+    "src": "_barlow-500-normal-C1h8hMer.woff"
+  },
+  "_barlow-600-normal-CNwfPWQD.woff": {
+    "file": "assets/barlow-600-normal-CNwfPWQD.woff",
+    "src": "_barlow-600-normal-CNwfPWQD.woff"
+  },
+  "_barlow-600-normal-DILqtrty.woff2": {
+    "file": "assets/barlow-600-normal-DILqtrty.woff2",
+    "src": "_barlow-600-normal-DILqtrty.woff2"
+  },
+  "_barlow-700-normal-A9pxMQ4z.woff2": {
+    "file": "assets/barlow-700-normal-A9pxMQ4z.woff2",
+    "src": "_barlow-700-normal-A9pxMQ4z.woff2"
+  },
+  "_barlow-700-normal-__SGTsZ1.woff": {
+    "file": "assets/barlow-700-normal-__SGTsZ1.woff",
+    "src": "_barlow-700-normal-__SGTsZ1.woff"
+  },
+  "_barlow-condensed-600-normal-BFJEwTuo.woff": {
+    "file": "assets/barlow-condensed-600-normal-BFJEwTuo.woff",
+    "src": "_barlow-condensed-600-normal-BFJEwTuo.woff"
+  },
+  "_barlow-condensed-600-normal-DepVgxBB.woff2": {
+    "file": "assets/barlow-condensed-600-normal-DepVgxBB.woff2",
+    "src": "_barlow-condensed-600-normal-DepVgxBB.woff2"
+  },
+  "_barlow-condensed-700-normal-Dmwat-ge.woff": {
+    "file": "assets/barlow-condensed-700-normal-Dmwat-ge.woff",
+    "src": "_barlow-condensed-700-normal-Dmwat-ge.woff"
+  },
+  "_barlow-condensed-700-normal-v1xN8_Wq.woff2": {
+    "file": "assets/barlow-condensed-700-normal-v1xN8_Wq.woff2",
+    "src": "_barlow-condensed-700-normal-v1xN8_Wq.woff2"
+  },
+  "_barlow-condensed-800-normal-BKzMuPgK.woff2": {
+    "file": "assets/barlow-condensed-800-normal-BKzMuPgK.woff2",
+    "src": "_barlow-condensed-800-normal-BKzMuPgK.woff2"
+  },
+  "_barlow-condensed-800-normal-e9GbPXiK.woff": {
+    "file": "assets/barlow-condensed-800-normal-e9GbPXiK.woff",
+    "src": "_barlow-condensed-800-normal-e9GbPXiK.woff"
+  },
+  "_fonts-Dm8-n5Rg.css": {
+    "file": "assets/fonts-Dm8-n5Rg.css",
+    "src": "_fonts-Dm8-n5Rg.css"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DVS-vybw.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-WdGcH96_.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
